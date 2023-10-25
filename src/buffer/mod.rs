@@ -221,7 +221,7 @@ const COMPACT_DELIM: [&str; 3 * C] = ["  ", " :", "  ", "  ", "  ", " •", "  "
 pub struct Symbols {
     pub chars: Vec<String>,
     pub delims: Vec<String>,
-    pub _width: usize,
+    pub width: usize,
     pub height: usize,
 }
 
@@ -230,7 +230,7 @@ impl Symbols {
         Symbols {
             chars: Vec::from_iter(NUMBERS.map(|s| s.to_owned()).into_iter()),
             delims: Vec::from_iter(DELIM.map(|s| s.to_owned()).into_iter()),
-            _width: 3,
+            width: 3,
             height: 5,
         }
     }
@@ -240,7 +240,7 @@ impl Symbols {
         Symbols {
             chars: Vec::from_iter(COMPACT_NUMBERS.map(|s| s.to_owned()).into_iter()),
             delims: Vec::from_iter(COMPACT_DELIM.map(|s| s.to_owned()).into_iter()),
-            _width: 2,
+            width: 2,
             height: 3,
         }
     }

@@ -1,8 +1,7 @@
 pub mod buffer;
 
 use buffer::{Counter, ScrBuf, Symbols};
-#[allow(unused_imports)]
-use chrono::{DateTime, Datelike, Local, Timelike};
+use chrono::{Local, Timelike};
 use std::string::String;
 use std::{thread, time, usize};
 
@@ -51,7 +50,7 @@ fn main() {
     let mut render_duration: time::Duration;
     let mut frame_start = time::Instant::now();
     let mut frame_over = frame_start.checked_add(frame_time).unwrap();
-    let step = symbols.height as isize;
+    let step = symbols.width as isize;
     loop {
         buf.clear(' ');
         btm = 0;
